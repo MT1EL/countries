@@ -1,10 +1,10 @@
-import { Button, useColorMode } from "@chakra-ui/react";
 import { useEffect } from "react";
 import Body from "./Body";
 import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Country from "./components/Country";
 
 function App() {
-  const { colorMode, toggleColorMode } = useColorMode();
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((response) => response.json())
@@ -16,7 +16,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <Body />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/country" element={<Country />} />
+        </Routes>
+      </Router>
     </>
   );
 }

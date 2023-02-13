@@ -72,7 +72,10 @@ function Search({ setSearchWord }) {
   };
 
   return (
-    <Flex justifyContent="space-between">
+    <Flex
+      justifyContent="space-between"
+      flexDirection={{ base: "column", md: "row" }}
+    >
       <Box>
         <InputGroup>
           <InputLeftAddon

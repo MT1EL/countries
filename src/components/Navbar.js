@@ -5,7 +5,13 @@ import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   return (
-    <Box pt="1em" px="5em" display="flex" justifyContent="space-between">
+    <Box
+      py="1em"
+      px={{ base: "1em", md: "5em" }}
+      alignItems="center"
+      display="flex"
+      justifyContent="space-between"
+    >
       <Text fontWeight="extrabold" fontSize="1.2em">
         Where in the world
       </Text>

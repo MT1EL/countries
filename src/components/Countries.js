@@ -14,7 +14,15 @@ function Countries({ searchWord }) {
   }
 
   return (
-    <Grid templateColumns={{ base: "1fr", md: "repeat(4, 1fr)" }} gap="2.2em">
+    <Grid
+      templateColumns={{
+        base: "1fr",
+        // sm: "repeat(2, 1fr)",
+        md: "repeat(2, 1fr)",
+        lg: "repeat(4, 1fr)",
+      }}
+      gap="2.2em"
+    >
       {data.map((item, index) => (
         <CountryCard key={item.name.official} data={item} />
       ))}

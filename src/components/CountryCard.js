@@ -6,6 +6,11 @@ function CountryCard({ data }) {
 
   return (
     <Box
+      as="a"
+      href="/country"
+      onClick={() =>
+        localStorage.setItem("detailedCountry", JSON.stringify(data))
+      }
       bg={colorMode === "light" && "#fff"}
       boxShadow={colorMode === "light" ? "5px 5px #f6f6f6" : "5px 5px #252525"}
       borderRadius="10px"

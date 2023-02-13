@@ -8,7 +8,7 @@ function Body() {
   const [searchWord, setSearchWord] = useState();
   return (
     <Box
-      px="5em"
+      px={{ base: "2em", md: "5em" }}
       pt="1em"
       bg={colorMode === "light" && "#fafafa"}
       minHeight="100vh"
