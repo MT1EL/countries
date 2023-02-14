@@ -28,7 +28,7 @@ function Country() {
   console.log(languagesKey);
   return (
     <Box
-      px="5em"
+      px={{ base: "1em", md: "5em" }}
       pt="1em"
       bg={colorMode === "light" && "#fafafa"}
       minHeight="100vh"
@@ -40,9 +40,17 @@ function Country() {
         </Button>
       </Box>
       <Box my="2em">
-        <Grid gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }} gap="3em">
+        <Grid
+          justifyItems={{ base: "center", md: "normal" }}
+          gridTemplateColumns={{ base: "1fr", md: "1fr 1fr" }}
+          gap={{ base: "0em", md: "3em" }}
+        >
           <Box>
-            <Img src={data.flags.png} w="100%" objectFit="cover" />
+            <Img
+              src={data.flags.png}
+              w={{ base: "auto", md: "100%" }}
+              objectFit="cover"
+            />
           </Box>
           <Box py="1.5em">
             <Text fontWeight={"extrabold"} fontSize="2em" mb=".5em">
@@ -80,16 +88,17 @@ function Country() {
               </Text>
             </Grid>
 
-            <Flex>
+            <Flex flexDirection={{ base: "column", md: "row" }}>
               <Text fontWeight={"extrabold"}>Google Map: </Text>
 
               <Button
-                ml="0.5em"
+                ml={{ base: "0em", md: "0.5em" }}
                 variant="link"
                 as="a"
                 href={data.maps.googleMaps}
                 target="_blank"
                 fontWeight="500"
+                alignSelf="flex-start"
               >
                 {data.maps.googleMaps}
               </Button>
